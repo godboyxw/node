@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <style>
+    .container {
+      width: 100%;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+  <script>
+    $(function () {
+      $.ajax({
+        //crossDomain: true,
+        type: "GET",
+        //url: "https://oapi.dingtalk.com/gettoken?appkey=dingoaldyzrffixeoexxgd&appsecret=9tmLGljTk0E6MB6fTZXTBQVe_7kr7H_17YoNdACD6mFnf_B9ptGRDsk_C_z6LEw4",
+        url: 'http://localhost:3000/profile',
+        dataType: "jsonp",
+        //contentType: 'application/json',
+        success: function (res) {
+          $('.container').html(JSON.stringify(res))
+          console.log(res)
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
